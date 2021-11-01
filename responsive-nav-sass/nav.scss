@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  list-style: none;
+  transition: all 0.2s linear;
+}
+
+$blue: #224bcf;
+$black: #302851;
+$white: #fff;
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+.nav {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1124px;
+  margin: 0 auto;
+  background: $black;
+  padding: 0 1rem;
+
+  @media (max-width: 768px) {
+    padding: 2rem;
+  }
+
+  &__logo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $white;
+
+    i {
+      color: $white;
+    }
+  }
+
+  &__main {
+    @media (max-width: 768px) {
+      position: absolute;
+      top: 99%;
+      left: 0;
+      right: 0;
+      background: $blue;
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    // float: left;
+
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
+    &:hover .nav__sub-list {
+      display: block;
+    }
+  }
+
+  &__link {
+    padding: 2rem;
+    display: block;
+    font-size: 1.7rem;
+    color: $white;
+
+    &:hover {
+      background: $blue;
+    }
+  }
+
+  &__sub-list {
+    position: absolute;
+    left: 0;
+    width: 20rem;
+    background: $blue;
+    display: none;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      position: relative;
+    }
+  }
+
+  &__sub-item {
+    width: 100%;
+  }
+
+  &__sub-link {
+    padding: 2rem;
+    display: block;
+    font-size: 1.7rem;
+    color: $white;
+
+    &:hover {
+      background: $black;
+    }
+  }
+}
+
+#menu-btn {
+  cursor: pointer;
+  color: $white;
+  font-size: 2.5rem;
+  display: none;
+
+  @media (max-width: 768px) {
+    display: inline-block;
+  }
+}
+
+.nav .active {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}

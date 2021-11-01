@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  list-style: none;
+  transition: all 0.2s linear; }
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden; }
+
+.nav {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1124px;
+  margin: 0 auto;
+  background: #302851;
+  padding: 0 1rem; }
+  @media (max-width: 768px) {
+    .nav {
+      padding: 2rem; } }
+  .nav__logo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff; }
+    .nav__logo i {
+      color: #fff; }
+  @media (max-width: 768px) {
+    .nav__main {
+      position: absolute;
+      top: 99%;
+      left: 0;
+      right: 0;
+      background: #224bcf;
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); } }
+  .nav__list {
+    list-style: none;
+    display: flex; }
+    @media (max-width: 768px) {
+      .nav__list {
+        display: block; } }
+  .nav__item {
+    position: relative; }
+    @media (max-width: 768px) {
+      .nav__item {
+        width: 100%; } }
+    .nav__item:hover .nav__sub-list {
+      display: block; }
+  .nav__link {
+    padding: 2rem;
+    display: block;
+    font-size: 1.7rem;
+    color: #fff; }
+    .nav__link:hover {
+      background: #224bcf; }
+  .nav__sub-list {
+    position: absolute;
+    left: 0;
+    width: 20rem;
+    background: #224bcf;
+    display: none; }
+    @media (max-width: 768px) {
+      .nav__sub-list {
+        width: 100%;
+        position: relative; } }
+  .nav__sub-item {
+    width: 100%; }
+  .nav__sub-link {
+    padding: 2rem;
+    display: block;
+    font-size: 1.7rem;
+    color: #fff; }
+    .nav__sub-link:hover {
+      background: #302851; }
+
+#menu-btn {
+  cursor: pointer;
+  color: #fff;
+  font-size: 2.5rem;
+  display: none; }
+  @media (max-width: 768px) {
+    #menu-btn {
+      display: inline-block; } }
+
+.nav .active {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
